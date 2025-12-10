@@ -1,26 +1,21 @@
-# 8-1-Mux-Implementation-in-Verilog
+# 8-to-1 Multiplexer
 
-This project implements an **8:1 multiplexer** in Verilog using three different modeling styles: **structural**, **behavioral**, and **dataflow**. The project includes comprehensive design files and testbenches for FPGA implementation with simulation, programming, and physical testing.
+## Overview
+Implements an 8-to-1 multiplexer three ways—structural, behavioral, and dataflow. A single testbench drives all versions so you can compare coding styles while keeping functionality identical.
 
----
+## Contents
+- `Multiplexer_8to1_Structural.v` (structural)
+- `Multiplexer_8to1_Behavioral.v` (behavioral)
+- `Multiplexer_8to1_Dataflow.v` (dataflow)
+- `Multiplexor_8to1_tb.v` (testbench)
 
-## Usage
+## How to Simulate
+1. Open the four files in Vivado.
+2. Set `Multiplexor_8to1_tb.v` as the simulation source.
+3. In the testbench, choose which implementation is the UUT.
+4. Run behavioral simulation and confirm all three produce the same waveform.
 
-1. Download the four Verilog files from this repository and open them in **Vivado**.  
-2. The testbench file (`Multiplexor_8to1_tb.v`) is used to simulate the three implementation files (structural, behavioral, and dataflow).  
-3. You can select which implementation to test by modifying the **UUT declaration** in the testbench file.  
-4. All three implementations will produce identical waveforms and perform the same function on the FPGA.  
-
----
-
-## Simulation
-
-- Connect your FPGA to your computer, power it on, and establish the connection in **Vivado**.  
-- Run a **behavioral simulation** to view the generated waveforms.  
-- This confirms the **8:1 multiplexer functionality**.  
-
----
-
-## Deployment
-
-- Program the FPGA with your chosen implementation to deploy the multiplexer on hardware.  
+## FPGA Deployment
+1. Synthesize and implement the chosen multiplexer.
+2. Generate a bitstream and program the Basys 3 board.
+3. Drive select/data switches and verify the output LED matches the selected input.
